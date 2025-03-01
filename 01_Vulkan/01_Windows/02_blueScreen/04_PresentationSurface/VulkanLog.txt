@@ -1,0 +1,38 @@
+WinMain()->Program Started successfully.
+First call to fillInstanceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is SuccededSecond call to fillInstanceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is SuccededfillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_device_group_creation
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_external_fence_capabilities
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_external_memory_capabilities
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_external_semaphore_capabilities
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_get_physical_device_properties2
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_get_surface_capabilities2
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_surface
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_surface_protected_capabilities
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_win32_surface
+fillInstanceExtensionNames()->vulkanExtensionName = VK_EXT_debug_report
+fillInstanceExtensionNames()->vulkanExtensionName = VK_EXT_debug_utils
+fillInstanceExtensionNames()->vulkanExtensionName = VK_EXT_surface_maintenance1
+fillInstanceExtensionNames()->vulkanExtensionName = VK_EXT_swapchain_colorspace
+fillInstanceExtensionNames()->vulkanExtensionName = VK_NV_external_memory_capabilities
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_portability_enumeration
+fillInstanceExtensionNames()->vulkanExtensionName = VK_LUNARG_direct_driver_loading
+fillInstanceExtensionNames()->VK_KHR_SURFACE_EXTENSION_NAME  is foundfillInstanceExtensionNames()->VK_KHR_WIN32_SURFACE_EXTENSION_NAME  is foundfillInstanceExtensionNames()->EnabledVulkanExtensionName = VK_KHR_surface
+Initialize()->fillInstanceExtensionNames Function is SuccededFirst call to fillInstanceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is SuccededSecond call to fillInstanceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is SuccededfillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_device_group_creation
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_external_fence_capabilities
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_external_memory_capabilities
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_external_semaphore_capabilities
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_get_physical_device_properties2
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_get_surface_capabilities2
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_surface
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_surface_protected_capabilities
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_win32_surface
+fillInstanceExtensionNames()->vulkanExtensionName = VK_EXT_debug_report
+fillInstanceExtensionNames()->vulkanExtensionName = VK_EXT_debug_utils
+fillInstanceExtensionNames()->vulkanExtensionName = VK_EXT_surface_maintenance1
+fillInstanceExtensionNames()->vulkanExtensionName = VK_EXT_swapchain_colorspace
+fillInstanceExtensionNames()->vulkanExtensionName = VK_NV_external_memory_capabilities
+fillInstanceExtensionNames()->vulkanExtensionName = VK_KHR_portability_enumeration
+fillInstanceExtensionNames()->vulkanExtensionName = VK_LUNARG_direct_driver_loading
+fillInstanceExtensionNames()->VK_KHR_SURFACE_EXTENSION_NAME  is foundfillInstanceExtensionNames()->VK_KHR_WIN32_SURFACE_EXTENSION_NAME  is foundfillInstanceExtensionNames()->EnabledVulkanExtensionName = VK_KHR_surface
+createVulkanInstance()->fillInstanceExtensionNames Function is SuccededvkCreateInstance() succededInitialize()->createVulkanInstance Function is SuccededgetSupportedSurface()->vkCreateWin32SurfaceKHR Function is SuccededInitialize()->getSupportedSurface Function is SuccededWinMain()->Initilize Function is SuccededvkDestroySurfaceKHR Succeded
+vkDestroyInstance Succeded
+Uninitialize->Program Terminated Successfully.

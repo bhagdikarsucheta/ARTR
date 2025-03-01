@@ -1,0 +1,295 @@
+WinMain -> File Opened Successfully.
+fillInstanceExtentionNames -> 1st call to vkEnumerateInstanceExtensionProperties() Succeeded.
+fillInstanceExtentionNames -> 2nd call to vkEnumerateInstanceExtensionProperties() Succeeded.
+fillInstanceExtentionNames -> vulkan instance extention name = VK_KHR_device_group_creation
+fillInstanceExtentionNames -> vulkan instance extention name = VK_KHR_external_fence_capabilities
+fillInstanceExtentionNames -> vulkan instance extention name = VK_KHR_external_memory_capabilities
+fillInstanceExtentionNames -> vulkan instance extention name = VK_KHR_external_semaphore_capabilities
+fillInstanceExtentionNames -> vulkan instance extention name = VK_KHR_get_physical_device_properties2
+fillInstanceExtentionNames -> vulkan instance extention name = VK_KHR_get_surface_capabilities2
+fillInstanceExtentionNames -> vulkan instance extention name = VK_KHR_surface
+fillInstanceExtentionNames -> vulkan instance extention name = VK_KHR_surface_protected_capabilities
+fillInstanceExtentionNames -> vulkan instance extention name = VK_KHR_win32_surface
+fillInstanceExtentionNames -> vulkan instance extention name = VK_EXT_debug_report
+fillInstanceExtentionNames -> vulkan instance extention name = VK_EXT_debug_utils
+fillInstanceExtentionNames -> vulkan instance extention name = VK_EXT_surface_maintenance1
+fillInstanceExtentionNames -> vulkan instance extention name = VK_EXT_swapchain_colorspace
+fillInstanceExtentionNames -> vulkan instance extention name = VK_NV_external_memory_capabilities
+fillInstanceExtentionNames -> vulkan instance extention name = VK_KHR_portability_enumeration
+fillInstanceExtentionNames -> vulkan instance extention name = VK_LUNARG_direct_driver_loading
+fillInstanceExtentionNames -> VK_KHR_SURFACE_EXTENSION_NAME extention found
+fillInstanceExtentionNames -> VK_KHR_WIN32_SURFACE_EXTENSION_NAME extention found
+fillInstanceExtentionNames -> enabled vulkan instance extention name = VK_KHR_surface
+fillInstanceExtentionNames -> enabled vulkan instance extention name = VK_KHR_win32_surface
+createVulkanInstance -> fillInstanceExtentionNames() Succeeded.
+Initialize -> vkCreateInstance() Successful.
+Initialize -> createVulkanInstance() Succeeded.
+getSupportedSurface -> vkCreateWin32SurfaceKHR() Successful.
+Initialize -> getSupportedSurface() Succeeded.
+getPhysicalDevice ->  1st call to vkEnumeratePhysicalDevices() Successful.
+getPhysicalDevice ->  2nd call to vkEnumeratePhysicalDevices() Successful.
+getPhysicalDevice -> free isQueueSurfaceSupported_array successfully.
+getPhysicalDevice -> free vkQueueFamilyProperties_array successfully.
+getPhysicalDevice -> Is successful to select required physical device.
+getPhysicalDevice -> Selected physical device supports tessellationShader.
+getPhysicalDevice -> Selected physical device supports geometryShader.
+Initialize -> getPhysicalDevice() Succeeded.
+******************VULKAN INFORMATION****************
+Api Version = 1.4.303
+Device Name = NVIDIA GeForce RTX 2070 SUPER
+Device Type = Discrete GPU (DGPU)
+Vendor Id = 0x10de
+Device Id = 0x1e84
+***************************************************
+printVkInfo -> free vkPhysicalDevice_array successfully.
+Initialize -> printVkInfo() Succeeded.
+fillDeviceExtentionNames -> 1st call to vkEnumerateDeviceExtensionProperties() Succeeded.
+fillDeviceExtentionNames -> 2nd call to vkEnumerateDeviceExtensionProperties() Succeeded.
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_16bit_storage
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_8bit_storage
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_acceleration_structure
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_bind_memory2
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_buffer_device_address
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_calibrated_timestamps
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_compute_shader_derivatives
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_cooperative_matrix
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_copy_commands2
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_create_renderpass2
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_dedicated_allocation
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_deferred_host_operations
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_depth_stencil_resolve
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_descriptor_update_template
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_device_group
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_draw_indirect_count
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_driver_properties
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_dynamic_rendering
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_dynamic_rendering_local_read
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_external_fence
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_external_fence_win32
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_external_memory
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_external_memory_win32
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_external_semaphore
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_external_semaphore_win32
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_format_feature_flags2
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_fragment_shader_barycentric
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_fragment_shading_rate
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_get_memory_requirements2
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_global_priority
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_image_format_list
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_imageless_framebuffer
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_index_type_uint8
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_line_rasterization
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_load_store_op_none
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_maintenance1
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_maintenance2
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_maintenance3
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_maintenance4
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_maintenance5
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_maintenance6
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_maintenance7
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_map_memory2
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_multiview
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_pipeline_binary
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_pipeline_executable_properties
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_pipeline_library
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_present_id
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_present_wait
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_push_descriptor
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_ray_query
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_ray_tracing_maintenance1
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_ray_tracing_pipeline
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_ray_tracing_position_fetch
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_relaxed_block_layout
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_sampler_mirror_clamp_to_edge
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_sampler_ycbcr_conversion
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_separate_depth_stencil_layouts
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_atomic_int64
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_clock
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_draw_parameters
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_expect_assume
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_float16_int8
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_float_controls
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_float_controls2
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_integer_dot_product
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_maximal_reconvergence
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_non_semantic_info
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_quad_control
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_relaxed_extended_instruction
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_subgroup_extended_types
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_subgroup_rotate
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_subgroup_uniform_control_flow
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_shader_terminate_invocation
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_spirv_1_4
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_storage_buffer_storage_class
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_swapchain
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_swapchain_mutable_format
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_synchronization2
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_timeline_semaphore
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_uniform_buffer_standard_layout
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_variable_pointers
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_vertex_attribute_divisor
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_video_decode_h264
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_video_decode_h265
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_video_decode_queue
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_video_encode_h264
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_video_encode_h265
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_video_encode_queue
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_video_maintenance1
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_video_queue
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_vulkan_memory_model
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_win32_keyed_mutex
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_workgroup_memory_explicit_layout
+fillDeviceExtentionNames -> vulkan device extention name = VK_KHR_zero_initialize_workgroup_memory
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_4444_formats
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_attachment_feedback_loop_dynamic_state
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_attachment_feedback_loop_layout
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_blend_operation_advanced
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_border_color_swizzle
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_buffer_device_address
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_calibrated_timestamps
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_color_write_enable
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_conditional_rendering
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_conservative_rasterization
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_custom_border_color
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_depth_bias_control
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_depth_clamp_control
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_depth_clamp_zero_one
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_depth_clip_control
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_depth_clip_enable
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_depth_range_unrestricted
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_descriptor_buffer
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_descriptor_indexing
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_device_fault
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_device_generated_commands
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_discard_rectangles
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_dynamic_rendering_unused_attachments
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_extended_dynamic_state
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_extended_dynamic_state2
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_extended_dynamic_state3
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_external_memory_host
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_fragment_shader_interlock
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_full_screen_exclusive
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_graphics_pipeline_library
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_hdr_metadata
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_host_image_copy
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_host_query_reset
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_image_2d_view_of_3d
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_image_robustness
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_image_sliced_view_of_3d
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_image_view_min_lod
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_index_type_uint8
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_inline_uniform_block
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_legacy_vertex_attributes
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_line_rasterization
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_load_store_op_none
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_memory_budget
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_memory_priority
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_mesh_shader
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_multi_draw
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_mutable_descriptor_type
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_nested_command_buffer
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_non_seamless_cube_map
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_opacity_micromap
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_pageable_device_local_memory
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_pci_bus_info
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_pipeline_creation_cache_control
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_pipeline_creation_feedback
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_pipeline_library_group_handles
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_pipeline_robustness
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_post_depth_coverage
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_primitive_topology_list_restart
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_primitives_generated_query
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_private_data
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_provoking_vertex
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_queue_family_foreign
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_robustness2
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_sample_locations
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_sampler_filter_minmax
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_scalar_block_layout
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_separate_stencil_usage
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_shader_atomic_float
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_shader_demote_to_helper_invocation
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_shader_image_atomic_int64
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_shader_module_identifier
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_shader_object
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_shader_replicated_composites
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_shader_subgroup_ballot
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_shader_subgroup_vote
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_shader_viewport_index_layer
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_subgroup_size_control
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_swapchain_maintenance1
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_texel_buffer_alignment
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_tooling_info
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_transform_feedback
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_vertex_attribute_divisor
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_vertex_input_dynamic_state
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_ycbcr_2plane_444_formats
+fillDeviceExtentionNames -> vulkan device extention name = VK_EXT_ycbcr_image_arrays
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_clip_space_w_scaling
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_cluster_acceleration_structure
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_compute_shader_derivatives
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_cooperative_matrix
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_cooperative_vector
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_copy_memory_indirect
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_corner_sampled_image
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_coverage_reduction_mode
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_cuda_kernel_launch
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_dedicated_allocation
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_dedicated_allocation_image_aliasing
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_descriptor_pool_overallocation
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_device_diagnostic_checkpoints
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_device_diagnostics_config
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_device_generated_commands
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_device_generated_commands_compute
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_external_memory
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_external_memory_win32
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_fill_rectangle
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_fragment_coverage_to_color
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_fragment_shader_barycentric
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_fragment_shading_rate_enums
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_framebuffer_mixed_samples
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_geometry_shader_passthrough
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_inherited_viewport_scissor
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_linear_color_attachment
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_low_latency
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_low_latency2
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_memory_decompression
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_mesh_shader
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_partitioned_acceleration_structure
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_present_metering
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_raw_access_chains
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_ray_tracing
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_ray_tracing_invocation_reorder
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_representative_fragment_test
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_sample_mask_override_coverage
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_scissor_exclusive
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_shader_atomic_float16_vector
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_shader_image_footprint
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_shader_sm_builtins
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_shader_subgroup_partitioned
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_shading_rate_image
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_viewport_array2
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_viewport_swizzle
+fillDeviceExtentionNames -> vulkan device extention name = VK_NV_win32_keyed_mutex
+fillDeviceExtentionNames -> vulkan device extention name = VK_NVX_binary_import
+fillDeviceExtentionNames -> vulkan device extention name = VK_NVX_image_view_handle
+fillDeviceExtentionNames -> vulkan device extention name = VK_NVX_multiview_per_view_attributes
+fillDeviceExtentionNames -> vulkan device extention name = VK_AMD_buffer_marker
+fillDeviceExtentionNames -> vulkan device extention name = VK_GOOGLE_user_type
+fillDeviceExtentionNames -> VK_KHR_SWAPCHAIN_EXTENSION_NAME extention found
+createVulkanDevice -> fillDeviceExtentionNames() Succeeded.
+createVulkanDevice -> vkCreateDevice() Successful.
+Initialize -> createVulkanDevice() Succeeded.
+getDeviceQueue -> vkGetDeviceQueue() Successful
+getPhysicalDeviceSurfaceFormatAndColorSpace -> 1st call to vkGetPhysicalDeviceSurfaceFormatsKHR() Succeeded.
+getPhysicalDeviceSurfaceFormatAndColorSpace -> 2nd call to vkGetPhysicalDeviceSurfaceFormatsKHR() Succeeded.
+getPhysicalDeviceSurfaceFormatAndColorSpace -> vkSurfaceFormatKHR_array free() Succeeded.
+createSwapchain -> getPhysicalDeviceSurfaceFormatAndColorSpace() Succeeded.
+createSwapchain -> vkGetPhysicalDeviceSurfaceCapabilitiesKHR() Succeeded.
+createSwapchain -> swapchain image width X height = 800 X 600
+getPhysicalDevicePresentMode()->vkGetPhysicalDeviceSurfacePresentModesKHR first Function is Succeded
+getPhysicalDevicePresentMode()->vkGetPhysicalDeviceSurfacePresentModesKHR second Function is Succeded
+MAILBOX
+NOT A MAILBOX
+vkPresentModeKHR_array is Free
+cre

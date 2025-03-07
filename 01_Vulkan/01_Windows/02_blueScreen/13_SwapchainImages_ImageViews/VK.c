@@ -89,7 +89,13 @@ VkSwapchainKHR vkSwapchainKHR = VK_NULL_HANDLE;
 VkExtent2D vkExtent2D_Swapchain;
 
 
-// Entry point fi=unction
+//Swapchain Image and Swapchain ImageView related variables
+uint32_t swapchainImageCount = UINT32_MAX;
+VkImage* swapchainImage_array = NULL;
+VkImageView* swapchainImageView_array = NULL;
+
+
+// Entry point function
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLine, int iCmdShow)
 {
 	// Function declarations
@@ -107,7 +113,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLi
 	int iRetVal = 0;
 	VkResult vkResult = VK_SUCCESS;
 
-	
+
 
 	// Code
 	gpFile = fopen("VulkanLog.txt", "w");
@@ -337,10 +343,9 @@ VkResult Initialize(void)
 
 	void getDeviceQueue(void);
 
-
 	VkResult createSwapchain(VkBool32);
 
-
+	VkResult createImagesAndImageViews(void);
 
 
 
@@ -404,7 +409,7 @@ VkResult Initialize(void)
 	}
 
 
-	
+
 
 	//Device Extension Names
 	vkResult = createVulkanDevice();
@@ -425,7 +430,7 @@ VkResult Initialize(void)
 
 
 
-	
+
 
 
 	///////////Swapchain
@@ -436,11 +441,25 @@ VkResult Initialize(void)
 		vkResult = VK_ERROR_INITIALIZATION_FAILED;
 		return vkResult;
 	}
-	else 
+	else
 	{
 		fprintf(gpFile, "\nInitialize()->createSwapchain() Function is Succeded");
 	}
 
+
+
+	//create vulkan images and vulkan imageviews
+	vkResult = createImagesAndImageViews();
+	if (vkResult != VK_SUCCESS)
+	{
+		fprintf(gpFile, "\nInitialize()->createImagesAndImageViews() Function is failed %d\n", vkResult);
+		vkResult = VK_ERROR_INITIALIZATION_FAILED;
+		return vkResult;
+	}
+	else
+	{
+		fprintf(gpFile, "\nInitialize()->createImagesAndImageViews() Function is Succeded");
+	}
 
 
 
@@ -488,21 +507,53 @@ void Uninitialize(void)
 
 	//No need to destroy/uninitialize vkQueue
 
-	//destroy 	swapchain
-	if (vkSwapchainKHR)
-	{
-		vkDestroySwapchainKHR(vkDevice, vkSwapchainKHR, NULL);
-		vkSwapchainKHR = VK_NULL_HANDLE;		//Bhanda swachha
-		fprintf(gpFile, "\n vkSwapchainKHR is Done\n");
 
-	}
-
+	//Vulkan related any destruction **HAS TO BE AFTER VkDevice**
+	//because any resources related to vulkan device ae all done so resource freeing 
 
 	//Destroy vulkan device
 	if (vkDevice)
 	{
 		vkDeviceWaitIdle(vkDevice);
 		fprintf(gpFile, "\n vkDeviceWaitIdle() is Done\n");
+
+
+		//Free swapchain Images
+
+		for (uint32_t i = 0; i < swapchainImageCount; i++)
+		{
+			vkDestroyImageView(vkDevice, swapchainImageView_array[i], NULL);
+			fprintf(gpFile, "\nFree swapchainImage_array images freed\n");
+		}
+
+		if (swapchainImageView_array)
+		{
+			free(swapchainImageView_array);
+			swapchainImageView_array = NULL;
+		}
+
+
+		/*for (uint32_t i = 0; i < swapchainImageCount; i++)
+		{
+			vkDestroyImage(vkDevice, swapchainImage_array[i], NULL);
+			fprintf(gpFile, "\nFree swapchainImage_array images freed\n");
+		}*/
+
+		if (swapchainImage_array)
+		{
+			free(swapchainImage_array);
+			swapchainImage_array = NULL;
+		}
+
+		//destroy 	swapchain
+		if (vkSwapchainKHR)
+		{
+			vkDestroySwapchainKHR(vkDevice, vkSwapchainKHR, NULL);
+			vkSwapchainKHR = VK_NULL_HANDLE;		//Bhanda swachha
+			fprintf(gpFile, "\n vkSwapchainKHR is Done\n");
+
+		}
+
 		vkDestroyDevice(vkDevice, NULL);
 		vkDevice = VK_NULL_HANDLE;
 		fprintf(gpFile, "\n vkDestroyDevice() is Done\n");
@@ -511,11 +562,13 @@ void Uninitialize(void)
 	//No need to Destroy selected physical device
 
 
-	
+
+
+
 
 	if (vkSurfaceKHR)
 	{
-		vkDestroySurfaceKHR(vkInstance, vkSurfaceKHR,NULL);
+		vkDestroySurfaceKHR(vkInstance, vkSurfaceKHR, NULL);
 		vkSurfaceKHR = VK_NULL_HANDLE;
 		fprintf(gpFile, "vkDestroySurfaceKHR Succeded\n");
 	}
@@ -535,7 +588,7 @@ void Uninitialize(void)
 		fclose(gpFile);
 		gpFile = NULL;
 	}
-	
+
 
 
 
@@ -735,8 +788,8 @@ VkResult getSupportedSurface(void)
 
 	VkWin32SurfaceCreateInfoKHR vkWin32SurfaceCreateInfoKHR;
 
-	memset((void*) &vkWin32SurfaceCreateInfoKHR, 0, sizeof(VkWin32SurfaceCreateInfoKHR));
- 
+	memset((void*)&vkWin32SurfaceCreateInfoKHR, 0, sizeof(VkWin32SurfaceCreateInfoKHR));
+
 	vkWin32SurfaceCreateInfoKHR.sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
 	vkWin32SurfaceCreateInfoKHR.pNext = NULL;
 	vkWin32SurfaceCreateInfoKHR.flags = 0;
@@ -768,7 +821,7 @@ VkResult getPhysicalDevice()
 	vkResult = vkEnumeratePhysicalDevices(vkInstance, &physicalDeviceCount, NULL);
 	if (vkResult != VK_SUCCESS)
 	{
-		fprintf(gpFile, "getPhysicalDevice() - vkEnumeratePhysicalDevices() First call failedis Failed %d\n",vkResult);
+		fprintf(gpFile, "getPhysicalDevice() - vkEnumeratePhysicalDevices() First call failedis Failed %d\n", vkResult);
 		return vkResult;
 	}
 	else if (physicalDeviceCount == 0)
@@ -781,10 +834,10 @@ VkResult getPhysicalDevice()
 	{
 		fprintf(gpFile, "getPhysicalDevice() - vkEnumeratePhysicalDevices()  First call succeeded\n");
 	}
-		
+
 
 	//3. Allocate vkPhysicalDevice_array an array according to above count
-	
+
 
 	vkPhysicalDevice_array = (VkPhysicalDevice*)malloc(sizeof(VkPhysicalDevice) * physicalDeviceCount);
 	//error checking for malloc should be done
@@ -793,7 +846,7 @@ VkResult getPhysicalDevice()
 	vkResult = vkEnumeratePhysicalDevices(vkInstance, &physicalDeviceCount, vkPhysicalDevice_array);
 	if (vkResult != VK_SUCCESS)
 	{
-		fprintf(gpFile, "getPhysicalDevice() - vkEnumeratePhysicalDevices() Second call failed is Failed %d\n",vkResult);
+		fprintf(gpFile, "getPhysicalDevice() - vkEnumeratePhysicalDevices() Second call failed is Failed %d\n", vkResult);
 		return(vkResult);
 	}
 	else
@@ -811,20 +864,20 @@ VkResult getPhysicalDevice()
 
 		//b
 		vkGetPhysicalDeviceQueueFamilyProperties(vkPhysicalDevice_array[i], &queueCount, NULL);
-		
+
 		//c
 		VkQueueFamilyProperties* vkQueFamilyProperties_array = NULL;
 		vkQueFamilyProperties_array = (VkQueueFamilyProperties*)malloc(sizeof(VkQueueFamilyProperties) * queueCount);
 
 
 		//vkResult = vkEnumeratePhysicalDevices(vkInstance, &queueCount, vkQueFamilyProperties_array);
-		
+
 
 		//d
 		vkGetPhysicalDeviceQueueFamilyProperties(vkPhysicalDevice_array[i], &queueCount, vkQueFamilyProperties_array);
 
 		//e
-		VkBool32 *isQueueSurfaceSupported_array = NULL;
+		VkBool32* isQueueSurfaceSupported_array = NULL;
 		isQueueSurfaceSupported_array = (VkBool32*)malloc(sizeof(VkBool32) * queueCount);
 		//f
 		for (uint32_t j = 0; j < queueCount; j++)
@@ -832,10 +885,10 @@ VkResult getPhysicalDevice()
 			vkGetPhysicalDeviceSurfaceSupportKHR(vkPhysicalDevice_array[i], j, vkSurfaceKHR, &isQueueSurfaceSupported_array[j]);
 		}
 		//g
-		fprintf(gpFile,"\n================================= Queue Family Count = %u =================================\n", queueCount);
+		fprintf(gpFile, "\n================================= Queue Family Count = %u =================================\n", queueCount);
 
 
-		for (uint32_t j = 0; j< queueCount; j++)
+		for (uint32_t j = 0; j < queueCount; j++)
 		{
 			if (vkQueFamilyProperties_array[j].queueFlags & VK_QUEUE_GRAPHICS_BIT)
 			{
@@ -844,7 +897,7 @@ VkResult getPhysicalDevice()
 					vkPhysicalDevice_Selected = vkPhysicalDevice_array[i];
 					graphicsQueueFamilyIndex_Selected = j;
 					bFound = VK_TRUE;
-					break;	
+					break;
 				}
 			}
 		}
@@ -884,7 +937,7 @@ VkResult getPhysicalDevice()
 
 	//7
 	memset((void*)&vkPhysicalDeviceMemoryProperties, 0, sizeof(VkPhysicalDeviceMemoryProperties));
-	
+
 	//8
 	vkGetPhysicalDeviceMemoryProperties(vkPhysicalDevice_Selected, &vkPhysicalDeviceMemoryProperties);
 
@@ -923,75 +976,75 @@ VkResult printVKInfo(void)
 	//Code
 	fprintf(gpFile, "\n*********************************** Vulkan Information*********************************************\n");
 
-		for (uint32_t i = 0; i < physicalDeviceCount; i++)
+	for (uint32_t i = 0; i < physicalDeviceCount; i++)
+	{
+		VkPhysicalDeviceProperties vkPhysicalDeviceproperties;
+		memset((void*)&vkPhysicalDeviceproperties, 0, sizeof(VkPhysicalDeviceProperties));
+		vkGetPhysicalDeviceProperties(vkPhysicalDevice_array[i], &vkPhysicalDeviceproperties);
+
+		uint32_t majorVersion = VK_VERSION_MAJOR(vkPhysicalDeviceproperties.apiVersion);
+		uint32_t minorVersion = VK_VERSION_MINOR(vkPhysicalDeviceproperties.apiVersion);
+		uint32_t patchVersion = VK_VERSION_PATCH(vkPhysicalDeviceproperties.apiVersion);
+
+		//API Version
+		fprintf(gpFile, "\n API Version = %d.%d.%d\n", majorVersion, minorVersion, patchVersion);
+
+		//Device Name
+		fprintf(gpFile, "\n Device Name = %s\n", vkPhysicalDeviceproperties.deviceName);
+
+		//Device Type
+	//	fprintf(gpFile, "\n Device Name = %s\n", vkPhysicalDeviceproperties.deviceType);
+		//
+		switch (vkPhysicalDeviceproperties.deviceType)
 		{
-			VkPhysicalDeviceProperties vkPhysicalDeviceproperties;
-			memset((void*)&vkPhysicalDeviceproperties, 0, sizeof(VkPhysicalDeviceProperties));
-			vkGetPhysicalDeviceProperties(vkPhysicalDevice_array[i], &vkPhysicalDeviceproperties);
 
-			uint32_t majorVersion = VK_VERSION_MAJOR(vkPhysicalDeviceproperties.apiVersion);
-			uint32_t minorVersion = VK_VERSION_MINOR(vkPhysicalDeviceproperties.apiVersion);
-			uint32_t patchVersion = VK_VERSION_PATCH(vkPhysicalDeviceproperties.apiVersion);
+		case VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU:
+			fprintf(gpFile, "\n Device Type = Integrated GPU(iGPU)\n");
+			break;
 
-			//API Version
-			fprintf(gpFile, "\n API Version = %d.%d.%d\n", majorVersion, minorVersion, patchVersion);
-			
-			//Device Name
-			fprintf(gpFile, "\n Device Name = %s\n", vkPhysicalDeviceproperties.deviceName);
-			
-			//Device Type
-		//	fprintf(gpFile, "\n Device Name = %s\n", vkPhysicalDeviceproperties.deviceType);
-			//
-			switch (vkPhysicalDeviceproperties.deviceType)
-			{
+		case VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU:
+			fprintf(gpFile, "\n Device Type = Discrete GPU(dGPU)\n");
+			break;
 
-			case VK_PHYSICAL_DEVICE_TYPE_INTEGRATED_GPU:
-				fprintf(gpFile, "\n Device Type = Integrated GPU(iGPU)\n");
-				break;
+		case VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU:
+			fprintf(gpFile, "\n Device Type = Virtual GPU(vGPU)\n");
+			break;
 
-			case VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU:
-				fprintf(gpFile, "\n Device Type = Discrete GPU(dGPU)\n");
-				break;
+		case VK_PHYSICAL_DEVICE_TYPE_CPU:
+			fprintf(gpFile, "\n Device Type = CPU \n");
+			break;
 
-			case VK_PHYSICAL_DEVICE_TYPE_VIRTUAL_GPU:
-				fprintf(gpFile, "\n Device Type = Virtual GPU(vGPU)\n");
-				break;
-
-			case VK_PHYSICAL_DEVICE_TYPE_CPU:
-				fprintf(gpFile, "\n Device Type = CPU \n");
-				break;
-
-			case VK_PHYSICAL_DEVICE_TYPE_OTHER:
-				fprintf(gpFile, "\n Device Type = Other\n");
-				break;
+		case VK_PHYSICAL_DEVICE_TYPE_OTHER:
+			fprintf(gpFile, "\n Device Type = Other\n");
+			break;
 
 
-			default:
-				fprintf(gpFile, "\n Device Type = UNKNOWN\n");
-				break;
-			}
-			
-			//vendor id
-			fprintf(gpFile, "\n Vendor ID  = 0x%04x\n", vkPhysicalDeviceproperties.vendorID);
-
-
-			//device ID
-			fprintf(gpFile, "\n Device ID  = 0x%04x\n", vkPhysicalDeviceproperties.deviceID);
-
+		default:
+			fprintf(gpFile, "\n Device Type = UNKNOWN\n");
+			break;
 		}
 
-		//free global physical device array
-		if (vkPhysicalDevice_array)
-		{
-			free(vkPhysicalDevice_array);
-			vkPhysicalDevice_array = NULL;
-			fprintf(gpFile, "getPhysicalDevice() Succeeded to free vkPhysicalDevice_array\n");
-		}
+		//vendor id
+		fprintf(gpFile, "\n Vendor ID  = 0x%04x\n", vkPhysicalDeviceproperties.vendorID);
+
+
+		//device ID
+		fprintf(gpFile, "\n Device ID  = 0x%04x\n", vkPhysicalDeviceproperties.deviceID);
+
+	}
+
+	//free global physical device array
+	if (vkPhysicalDevice_array)
+	{
+		free(vkPhysicalDevice_array);
+		vkPhysicalDevice_array = NULL;
+		fprintf(gpFile, "getPhysicalDevice() Succeeded to free vkPhysicalDevice_array\n");
+	}
 
 
 
 
-		return vkResult;
+	return vkResult;
 
 
 }
@@ -1011,11 +1064,11 @@ VkResult fillDeviceExtensionNames(void)
 	uint32_t deviceExtensionCount = 0;
 
 	//First vulkan API
-	vkResult = vkEnumerateDeviceExtensionProperties(vkPhysicalDevice_Selected,NULL, &deviceExtensionCount, NULL);
+	vkResult = vkEnumerateDeviceExtensionProperties(vkPhysicalDevice_Selected, NULL, &deviceExtensionCount, NULL);
 	//NULL : Layer name supported by Vulkan,  &instanceextensioncount : count or size, NULL: Extension properties array(parameterised returm value)
 	if (vkResult != VK_SUCCESS)
 	{
-		fprintf(gpFile, "First call to fillDeviceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is Failedis Failed %d\n",vkResult);
+		fprintf(gpFile, "First call to fillDeviceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is Failedis Failed %d\n", vkResult);
 		return (vkResult);
 	}
 	else {
@@ -1028,10 +1081,10 @@ VkResult fillDeviceExtensionNames(void)
 	//For the sake of bravety no malloc checking code
 
 
-	vkResult = vkEnumerateDeviceExtensionProperties(vkPhysicalDevice_Selected,NULL, &deviceExtensionCount, vkExtensionProperties_array);
+	vkResult = vkEnumerateDeviceExtensionProperties(vkPhysicalDevice_Selected, NULL, &deviceExtensionCount, vkExtensionProperties_array);
 	if (vkResult != VK_SUCCESS)
 	{
-		fprintf(gpFile, "Second call to fillDeviceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is Failedis Failed %d\n",vkResult);
+		fprintf(gpFile, "Second call to fillDeviceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is Failedis Failed %d\n", vkResult);
 		return (vkResult);
 	}
 	else {
@@ -1048,7 +1101,7 @@ VkResult fillDeviceExtensionNames(void)
 		memcpy(deviceExtensionNames_array[i], vkExtensionProperties_array[i].extensionName, strlen(vkExtensionProperties_array[i].extensionName) + 1);
 		fprintf(gpFile, "fillDeviceExtensionNames()->vulkanDeviceExtensionName = %s\n", deviceExtensionNames_array[i]);
 	}
-	fprintf(gpFile, "\n\n%s() : Device Extension Count = %u\n" ,__FUNCTION__, deviceExtensionCount);
+	fprintf(gpFile, "\n\n%s() : Device Extension Count = %u\n", __FUNCTION__, deviceExtensionCount);
 
 	//4. As not required here onward free the vkExtension properties array
 	free(vkExtensionProperties_array);
@@ -1057,7 +1110,7 @@ VkResult fillDeviceExtensionNames(void)
 
 	//5.Find weather above extensions contain our required 1 extensions
 	VkBool32 vulkanSwapChainExtensionFound = VK_FALSE;
-	
+
 
 	for (uint32_t i = 0; i < deviceExtensionCount; i++)
 	{
@@ -1088,7 +1141,7 @@ VkResult fillDeviceExtensionNames(void)
 	}
 
 
-	
+
 
 	//8. Print only enabled extension names
 	for (uint32_t i = 0; i < enabledDeviceExtensionCount; i++)
@@ -1109,7 +1162,7 @@ VkResult createVulkanDevice(void)
 	////////Function declaration
 	// Function declarations
 	VkResult fillDeviceExtensionNames();
-	
+
 
 
 	// Variable declarations
@@ -1153,7 +1206,7 @@ VkResult createVulkanDevice(void)
 	vkDeviceCreateInfo.enabledLayerCount = 0;
 	vkDeviceCreateInfo.ppEnabledLayerNames = NULL;
 	vkDeviceCreateInfo.pEnabledFeatures = NULL;
-	
+
 
 
 	//5 Now call vkCreateDevice() vulkan api to create actually vulkan device
@@ -1196,7 +1249,7 @@ void getDeviceQueue(void)
 		fprintf(gpFile, "\ngetDeviceQueue()->vkGetDeviceQueue Function Succeded vkQueue\n ");
 
 	}
-	
+
 
 	//void return value means all param are correct
 
@@ -1215,7 +1268,7 @@ VkResult getPhysicalDeviceSurfaceFormatAndColorSpace(void)
 
 	//Code
 	//get the count of supported color surface color VkFormats
-	uint32_t formatCount=0;
+	uint32_t formatCount = 0;
 
 	vkResult = vkGetPhysicalDeviceSurfaceFormatsKHR(vkPhysicalDevice_Selected, vkSurfaceKHR, &formatCount, NULL);
 	if (vkResult != VK_SUCCESS)
@@ -1223,7 +1276,7 @@ VkResult getPhysicalDeviceSurfaceFormatAndColorSpace(void)
 		fprintf(gpFile, "getPhysicalDeviceSurfaceFormatAndColorSpace()->vkGetPhysicalDeviceSurfaceFormatsKHR Function is Failed %d\n", vkResult);
 		return vkResult;
 	}
-	else if(formatCount == 0)
+	else if (formatCount == 0)
 	{
 		fprintf(gpFile, "vkGetPhysicalDeviceSurfaceFormatsKHR() failed due to no surface format count not present driver %d\n", vkResult);
 		return vkResult;
@@ -1304,8 +1357,8 @@ VkResult getPhysicalDevicePresentMode(void)
 
 
 	VkPresentModeKHR* vkPresentModeKHR_array = (VkPresentModeKHR*)malloc(presentModeCount * sizeof(VkPresentModeKHR));
-	
-	
+
+
 	vkResult = vkGetPhysicalDeviceSurfacePresentModesKHR(vkPhysicalDevice_Selected, vkSurfaceKHR, &presentModeCount, vkPresentModeKHR_array);
 	if (vkResult != VK_SUCCESS)
 	{
@@ -1330,7 +1383,7 @@ VkResult getPhysicalDevicePresentMode(void)
 			break;
 		}
 
-		
+
 	}
 
 	if (vkPresentModeKHR_array != VK_PRESENT_MODE_MAILBOX_KHR)
@@ -1392,7 +1445,7 @@ VkResult createSwapchain(VkBool32 vsync)
 		fprintf(gpFile, "\ncreateSwapchain()->vkGetPhysicalDeviceSurfaceCapabilitiesKHR() Function is %d\n", vkResult);
 		return vkResult;
 	}
-	else {	
+	else {
 		fprintf(gpFile, "\ncreateSwapchain()->vkGetPhysicalDeviceSurfaceCapabilitiesKHR() Function is Succeded");
 	}
 
@@ -1417,7 +1470,7 @@ VkResult createSwapchain(VkBool32 vsync)
 
 
 	///Step 4 choose size of the swapchain image
-	
+
 	memset((void*)&vkExtent2D_Swapchain, 0, sizeof(VkExtent2D));
 	if (vkSurfaceCapabilitiesKHR.currentExtent.width != UINT32_MAX)
 	{
@@ -1486,7 +1539,7 @@ VkResult createSwapchain(VkBool32 vsync)
 	vkSwapchainCreateInfoKHR.imageSharingMode = VK_SHARING_MODE_EXCLUSIVE;
 	vkSwapchainCreateInfoKHR.compositeAlpha = VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
 	vkSwapchainCreateInfoKHR.presentMode = vkPresentModeKHR;
-	vkSwapchainCreateInfoKHR.clipped = VK_TRUE;			
+	vkSwapchainCreateInfoKHR.clipped = VK_TRUE;
 
 
 	////STEP 9
@@ -1501,7 +1554,7 @@ VkResult createSwapchain(VkBool32 vsync)
 	}
 
 
-	   
+
 
 
 	return vkResult;
@@ -1509,6 +1562,117 @@ VkResult createSwapchain(VkBool32 vsync)
 
 
 }
+
+VkResult createImagesAndImageViews(void)
+{
+
+	// Variable declarations
+	VkResult vkResult = VK_SUCCESS;
+
+	///code
+
+	//Get swapchain image count
+	vkResult = vkGetSwapchainImagesKHR(vkDevice, vkSwapchainKHR, &swapchainImageCount, NULL);
+	if (vkResult != VK_SUCCESS)
+	{
+		fprintf(gpFile, "\ncreateImagesAndImageViews()->vkGetSwapchainImagesKHR Function is Failed %d\n", vkResult);
+		return vkResult;
+	}
+	else if (swapchainImageCount == 0)
+	{
+		fprintf(gpFile, "\ncreateImagesAndImageViews() failed due to no count not present driver %d\n", vkResult);
+		return vkResult;
+	}
+	else
+	{
+		fprintf(gpFile, "\n\ncreateImagesAndImageViews()->vkGetSwapchainImagesKHR gives swapchain (desired) image count = %d\n", swapchainImageCount);
+	}
+
+
+	//Step 2 : allocate the swapchin image array
+	swapchainImage_array = (VkImage*)malloc(swapchainImageCount * sizeof(VkImage));
+
+	vkResult = vkGetSwapchainImagesKHR(vkDevice, vkSwapchainKHR, &swapchainImageCount, swapchainImage_array);
+	if (vkResult != VK_SUCCESS)
+	{
+		fprintf(gpFile, "\ncreateImagesAndImageViews()->vkGetSwapchainImagesKHR Function is %d\n", vkResult);
+		return vkResult;
+	}
+	else {
+		fprintf(gpFile, "\ncreateImagesAndImageViews()->vkGetSwapchainImagesKHR Function is Succeded");
+	}
+
+
+	//step 3 : allocate array of swapchain image view
+	swapchainImageView_array = (VkImageView*)malloc(swapchainImageCount * sizeof(VkImageView));
+
+	//step5:initialize vkimageview createinfo structure
+
+	VkImageViewCreateInfo vkImageViewCreateInfo;
+	memset((void*)&vkImageViewCreateInfo, 0, sizeof(VkImageViewCreateInfo));
+
+	vkImageViewCreateInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+	vkImageViewCreateInfo.pNext = NULL;
+	vkImageViewCreateInfo.flags = 0;
+	vkImageViewCreateInfo.format = vkFormat_color;
+	vkImageViewCreateInfo.components.r = VK_COMPONENT_SWIZZLE_R;
+	vkImageViewCreateInfo.components.g = VK_COMPONENT_SWIZZLE_G;
+	vkImageViewCreateInfo.components.b = VK_COMPONENT_SWIZZLE_B;
+	vkImageViewCreateInfo.components.a = VK_COMPONENT_SWIZZLE_A;
+	vkImageViewCreateInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT; //WHICH PART OF IMAGE OR WHOLE OF IMAGE IS GOING TO BE AFFECTED BY IMAGE BARRIER
+	vkImageViewCreateInfo.subresourceRange.baseMipLevel = 0;		//How much mipmap level so start from 0th index level
+	vkImageViewCreateInfo.subresourceRange.levelCount = 1;			//dont know level count so atleast 1 is expected
+	vkImageViewCreateInfo.subresourceRange.baseArrayLayer = 0;		//if image is composite then any layer is also image then it is called as layered rendering and it is image arrays layer
+	vkImageViewCreateInfo.subresourceRange.layerCount = 1;			//minimum layer is 1
+	vkImageViewCreateInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;			//ENUM OF vk_image_view_type_2D
+
+	//Step 6 : Now fill imageview_array using above struct
+	for (uint32_t i = 0; i < swapchainImageCount; i++)
+	{
+		vkImageViewCreateInfo.image = swapchainImage_array[i];
+
+		vkResult = vkCreateImageView(vkDevice, &vkImageViewCreateInfo, NULL, &swapchainImageView_array[i]);
+		if (vkResult != VK_SUCCESS)
+		{
+			fprintf(gpFile, "\ncreateImagesAndImageViews()->vkCreateImageViews failed for iteration %d.%d\n", i, vkResult);
+			return vkResult;
+		}
+		else
+		{
+			fprintf(gpFile, "\ncreateImagesAndImageViews()->vkCreateImageViews Function is Succeded");
+		}
+
+	}
+
+	return vkResult;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

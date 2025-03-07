@@ -26,16 +26,14 @@ Initialize -> vkCreateInstance() Successful.
 Initialize -> createVulkanInstance() Succeeded.
 getSupportedSurface -> vkCreateWin32SurfaceKHR() Successful.
 Initialize -> getSupportedSurface() Succeeded.
-getPhysicalDevice() - vkEnumeratePhysicalDevices()  First call succeeded
-getPhysicalDevice() - vkEnumeratePhysicalDevices() Second call succeeded
-
-================================= Queue Family Count = 5 =================================
-
-getPhysicalDevice()-> isQueueSurfaceSupported_array Succeded to Free()
-getPhysicalDevice()-> vkQueFamilyProperties_array Succeded to Free()getPhysicalDevice() is Succeeded to select the required physical device with graphics enabled
-
- getPhysicalDevice()-> vkPhysicalDeviceFeatures is supports tessellation shader
- getPhysicalDevice()-> vkPhysicalDeviceFeatures is supports geometryShader shaderInitialize -> getPhysicalDevice() Succeeded.
+getPhysicalDevice ->  1st call to vkEnumeratePhysicalDevices() Successful.
+getPhysicalDevice ->  2nd call to vkEnumeratePhysicalDevices() Successful.
+getPhysicalDevice -> free isQueueSurfaceSupported_array successfully.
+getPhysicalDevice -> free vkQueueFamilyProperties_array successfully.
+getPhysicalDevice -> Is successful to select required physical device.
+getPhysicalDevice -> Selected physical device supports tessellationShader.
+getPhysicalDevice -> Selected physical device supports geometryShader.
+Initialize -> getPhysicalDevice() Succeeded.
 ******************VULKAN INFORMATION****************
 Api Version = 1.4.303
 Device Name = NVIDIA GeForce RTX 2070 SUPER
@@ -283,19 +281,18 @@ createVulkanDevice -> fillDeviceExtentionNames() Succeeded.
 createVulkanDevice -> vkCreateDevice() Successful.
 Initialize -> createVulkanDevice() Succeeded.
 getDeviceQueue -> vkGetDeviceQueue() Successful
-getPhysicalDeviceSurfaceFormatAndColorSpace()->vkGetPhysicalDeviceSurfaceFormatsKHR Function is Succeded
-getPhysicalDeviceSurfaceFormatAndColorSpace()->vkGetPhysicalDeviceSurfaceFormatsKHR second Function is Succeded
-vkSurfaceFormatKHR_array is Free
+getPhysicalDeviceSurfaceFormatAndColorSpace -> 1st call to vkGetPhysicalDeviceSurfaceFormatsKHR() Succeeded.
+getPhysicalDeviceSurfaceFormatAndColorSpace -> 2nd call to vkGetPhysicalDeviceSurfaceFormatsKHR() Succeeded.
+getPhysicalDeviceSurfaceFormatAndColorSpace -> vkSurfaceFormatKHR_array free() Succeeded.
 createSwapchain -> getPhysicalDeviceSurfaceFormatAndColorSpace() Succeeded.
 createSwapchain -> vkGetPhysicalDeviceSurfaceCapabilitiesKHR() Succeeded.
 createSwapchain -> swapchain image width X height = 800 X 600
-getPhysicalDevicePresentMode()->vkGetPhysicalDeviceSurfacePresentModesKHR first Function is Succeded
-getPhysicalDevicePresentMode()->vkGetPhysicalDeviceSurfacePresentModesKHR second Function is Succeded
-MAILBOX
-NOT A MAILBOX
-vkPresentModeKHR_array is Free
-
-createSwapchain()->getPhysicalDevicePresentMode Function is SuccededInitialize -> createSwapchain() Succeeded.
+getPhysicalDevicePresentMode -> 1st call to vkGetPhysicalDeviceSurfacePresentModesKHR() Succeeded.
+getPhysicalDevicePresentMode -> 2nd call to vkGetPhysicalDeviceSurfacePresentModesKHR() Succeeded.
+getPhysicalDevicePresentMode -> vkPresentModeKHR = 1.
+getPhysicalDevicePresentMode -> vkPresentModeKHR_array free() Succeeded.
+createSwapchain -> getPhysicalDevicePresentMode() Succeeded.
+Initialize -> createSwapchain() Succeeded.
 WinMain -> Initialize() Succeeded.
 UnInitialize -> vkDestroySurfaceKHR() Successful.
 UnInitialize -> vkDeviceWaitIdle() is done Successful.

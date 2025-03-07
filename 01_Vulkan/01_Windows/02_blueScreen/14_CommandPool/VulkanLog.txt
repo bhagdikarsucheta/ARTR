@@ -294,11 +294,11 @@ vkSurfaceFormatKHR_array is Free
 
 createSwapchain()->getPhysicalDeviceSurfaceFormatAndColorSpace Function is Succeded
 createSwapchain()->vkGetPhysicalDeviceSurfaceCapabilitiesKHR() Function is Succeded
-maxImageCount
+minImageCount
 
 
 
-!!!2 8 8 !!!
+!!!2 8 2 !!!
 
 In IF createSwapchain()->SwapchainImage WidthxHeight = 784 x 561
 getPhysicalDevicePresentMode()->vkGetPhysicalDeviceSurfacePresentModesKHR first Function is Succeded
@@ -309,10 +309,24 @@ vkPresentModeKHR_array is Free
 
 createSwapchain()->getPhysicalDevicePresentMode Function is Succeded
 createSwapchain()->vkCreateSwapchainKHR Function is Succeded
-Initialize()->createSwapchain() Function is SuccededWinMain()->Initilize Function is Succeded
- vkSwapchainKHR is Done
+Initialize()->createSwapchain() Function is Succeded
 
+createImagesAndImageViews()->vkGetSwapchainImagesKHR gives swapchain (desired) image count = 2
+
+createImagesAndImageViews()->vkGetSwapchainImagesKHR Function is Succeded
+createImagesAndImageViews()->vkCreateImageViews Function is Succeded
+createImagesAndImageViews()->vkCreateImageViews Function is Succeded
+Initialize()->createImagesAndImageViews() Function is SuccededcreateCommandPool()->vkCreateCommandPool Function is Succeded
+Initialize()->createCommandPool() Function is SuccededWinMain()->Initilize Function is Succeded
  vkDeviceWaitIdle() is Done
+
+Free swapchainImage_array images freed
+
+Free swapchainImage_array images freed
+
+ vkCommandPool is Freed
+
+ vkSwapchainKHR is Freed
 
  vkDestroyDevice() is Done
 vkDestroySurfaceKHR Succeded

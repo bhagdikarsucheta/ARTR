@@ -1,0 +1,548 @@
+WinMain()->Program Started successfully.
+First call to fillInstanceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is SuccededSecond call to fillInstanceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is SuccededfillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_KHR_device_group_creation
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_KHR_external_fence_capabilities
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_KHR_external_memory_capabilities
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_KHR_external_semaphore_capabilities
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_KHR_get_physical_device_properties2
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_KHR_get_surface_capabilities2
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_KHR_surface
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_KHR_surface_protected_capabilities
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_KHR_win32_surface
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_EXT_debug_report
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_EXT_debug_utils
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_EXT_surface_maintenance1
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_EXT_swapchain_colorspace
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_NV_external_memory_capabilities
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_KHR_portability_enumeration
+fillInstanceExtensionNames()->vulkanInstanceExtensionName = VK_LUNARG_direct_driver_loading
+
+fillInstanceExtensionNames()->VK_KHR_SURFACE_EXTENSION_NAME  is found
+fillInstanceExtensionNames()->VK_KHR_WIN32_SURFACE_EXTENSION_NAME  is found
+fillInstanceExtensionNames()->Validation is ON but requierd VK_EXT_DEBUG_REPORT_EXTENSION_NAME is Supported
+
+fillInstanceExtensionNames()->EnabledVulkanExtensionName = VK_KHR_surface
+
+fillInstanceExtensionNames()->EnabledVulkanExtensionName = VK_KHR_win32_surface
+
+fillInstanceExtensionNames()->EnabledVulkanExtensionName = VK_EXT_debug_report
+
+createVulkanInstance()->fillInstanceExtensionNames Function is Succeded
+
+First call to fillValidationLayerNames()->vkEnumerateInstanceLayerProperties Function is Succeded
+
+Second call to fillValidationLayerNames()->vkEnumerateInstanceLayerProperties Function is Succeded
+
+fillValidationLayerNames()->	 = VK_LAYER_NV_optimus
+
+fillValidationLayerNames()->	 = VK_LAYER_NV_gr2608
+
+fillValidationLayerNames()->	 = VK_LAYER_VALVE_steam_overlay
+
+fillValidationLayerNames()->	 = VK_LAYER_VALVE_steam_fossilize
+
+fillValidationLayerNames()->	 = VK_LAYER_OBS_HOOK
+
+fillValidationLayerNames()->	 = VK_LAYER_RENDERDOC_Capture
+
+fillValidationLayerNames()->	 = VK_LAYER_RTSS
+
+fillValidationLayerNames()->	 = VK_LAYER_EOS_Overlay
+
+fillValidationLayerNames()->	 = VK_LAYER_EOS_Overlay
+
+fillValidationLayerNames()->	 = VK_LAYER_NV_nsight-sys
+
+fillValidationLayerNames()->	 = VK_LAYER_NV_nsight-sys
+
+fillValidationLayerNames()->	 = VK_LAYER_LUNARG_api_dump
+
+fillValidationLayerNames()->	 = VK_LAYER_LUNARG_gfxreconstruct
+
+fillValidationLayerNames()->	 = VK_LAYER_KHRONOS_synchronization2
+
+fillValidationLayerNames()->	 = VK_LAYER_KHRONOS_validation
+
+fillValidationLayerNames()->	 = VK_LAYER_LUNARG_monitor
+
+fillValidationLayerNames()->	 = VK_LAYER_LUNARG_screenshot
+
+fillValidationLayerNames()->	 = VK_LAYER_KHRONOS_profiles
+
+fillValidationLayerNames()->	 = VK_LAYER_KHRONOS_shader_object
+
+fillValidationLayerNames()->	 = VK_LAYER_LUNARG_crash_diagnostic
+
+fillValidationLayerNames()->VK_LAYER_KHRONOS_validation Supported
+fillValidationLayerNames()->EnabledVulkanValidationLayerName = VK_LAYER_KHRONOS_validation
+
+createVulkanInstance()->fillValidationLayerNames Function is Succeded
+vkCreateInstance() succededcreateValidationCallbackFunction() :vkGetInstanceProcAddr: succeeded to get function pointer for vkCreateDebugReportCallbackEXT_fnptr.
+createValidationCallbackFunction() :vkGetInstanceProcAddr: succeeded to get function pointer for vkDestroyDebugReportCallbackEXT_fnptr.
+createValidationCallbackFunction() :vkCreateDebugReportCallbackEXT_fnptr succeeded.
+
+createVulkanInstance()->createValidationCallbackFunction Function is Succeded
+
+Initialize()->createVulkanInstance Function is Succeded
+getSupportedSurface()->vkCreateWin32SurfaceKHR Function is Succeded
+Initialize()->getSupportedSurface Function is Succeded
+getPhysicalDevice() - vkEnumeratePhysicalDevices()  First call succeeded
+getPhysicalDevice() - vkEnumeratePhysicalDevices() Second call succeeded
+
+================================= Queue Family Count = 5 =================================
+
+getPhysicalDevice()-> isQueueSurfaceSupported_array Succeded to Free()
+getPhysicalDevice()-> vkQueFamilyProperties_array Succeded to Free()getPhysicalDevice() is Succeeded to select the required physical device with graphics enabled
+
+ getPhysicalDevice()-> vkPhysicalDeviceFeatures is supports tessellation shader
+ getPhysicalDevice()-> vkPhysicalDeviceFeatures is supports geometryShader shaderInitialize()->getPhysicalDevice Function is Succeded
+
+*********************************** Vulkan Information*********************************************
+
+ API Version = 1.4.303
+
+ Device Name = NVIDIA GeForce RTX 2070 SUPER
+
+ Device Type = Discrete GPU(dGPU)
+
+ Vendor ID  = 0x10de
+
+ Device ID  = 0x1e84
+getPhysicalDevice() Succeeded to free vkPhysicalDevice_array
+
+Initialize()->printVKInfo Function is Succeded
+First call to fillDeviceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is SuccededSecond call to fillDeviceExtensionNames()->vkEnumerateInstanceExtensionProperties Function is SuccededfillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_16bit_storage
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_8bit_storage
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_acceleration_structure
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_bind_memory2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_buffer_device_address
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_calibrated_timestamps
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_compute_shader_derivatives
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_cooperative_matrix
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_copy_commands2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_create_renderpass2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_dedicated_allocation
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_deferred_host_operations
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_depth_stencil_resolve
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_descriptor_update_template
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_device_group
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_draw_indirect_count
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_driver_properties
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_dynamic_rendering
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_dynamic_rendering_local_read
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_external_fence
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_external_fence_win32
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_external_memory
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_external_memory_win32
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_external_semaphore
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_external_semaphore_win32
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_format_feature_flags2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_fragment_shader_barycentric
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_fragment_shading_rate
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_get_memory_requirements2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_global_priority
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_image_format_list
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_imageless_framebuffer
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_index_type_uint8
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_line_rasterization
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_load_store_op_none
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_maintenance1
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_maintenance2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_maintenance3
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_maintenance4
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_maintenance5
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_maintenance6
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_maintenance7
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_map_memory2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_multiview
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_pipeline_binary
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_pipeline_executable_properties
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_pipeline_library
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_present_id
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_present_wait
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_push_descriptor
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_ray_query
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_ray_tracing_maintenance1
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_ray_tracing_pipeline
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_ray_tracing_position_fetch
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_relaxed_block_layout
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_sampler_mirror_clamp_to_edge
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_sampler_ycbcr_conversion
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_separate_depth_stencil_layouts
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_atomic_int64
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_clock
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_draw_parameters
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_expect_assume
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_float16_int8
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_float_controls
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_float_controls2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_integer_dot_product
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_maximal_reconvergence
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_non_semantic_info
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_quad_control
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_relaxed_extended_instruction
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_subgroup_extended_types
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_subgroup_rotate
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_subgroup_uniform_control_flow
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_shader_terminate_invocation
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_spirv_1_4
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_storage_buffer_storage_class
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_swapchain
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_swapchain_mutable_format
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_synchronization2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_timeline_semaphore
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_uniform_buffer_standard_layout
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_variable_pointers
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_vertex_attribute_divisor
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_video_decode_h264
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_video_decode_h265
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_video_decode_queue
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_video_encode_h264
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_video_encode_h265
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_video_encode_queue
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_video_maintenance1
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_video_queue
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_vulkan_memory_model
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_win32_keyed_mutex
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_workgroup_memory_explicit_layout
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_KHR_zero_initialize_workgroup_memory
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_4444_formats
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_attachment_feedback_loop_dynamic_state
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_attachment_feedback_loop_layout
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_blend_operation_advanced
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_border_color_swizzle
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_buffer_device_address
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_calibrated_timestamps
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_color_write_enable
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_conditional_rendering
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_conservative_rasterization
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_custom_border_color
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_depth_bias_control
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_depth_clamp_control
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_depth_clamp_zero_one
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_depth_clip_control
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_depth_clip_enable
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_depth_range_unrestricted
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_descriptor_buffer
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_descriptor_indexing
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_device_fault
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_device_generated_commands
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_discard_rectangles
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_dynamic_rendering_unused_attachments
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_extended_dynamic_state
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_extended_dynamic_state2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_extended_dynamic_state3
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_external_memory_host
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_fragment_shader_interlock
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_full_screen_exclusive
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_graphics_pipeline_library
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_hdr_metadata
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_host_image_copy
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_host_query_reset
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_image_2d_view_of_3d
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_image_robustness
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_image_sliced_view_of_3d
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_image_view_min_lod
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_index_type_uint8
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_inline_uniform_block
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_legacy_vertex_attributes
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_line_rasterization
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_load_store_op_none
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_memory_budget
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_memory_priority
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_mesh_shader
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_multi_draw
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_mutable_descriptor_type
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_nested_command_buffer
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_non_seamless_cube_map
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_opacity_micromap
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_pageable_device_local_memory
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_pci_bus_info
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_pipeline_creation_cache_control
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_pipeline_creation_feedback
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_pipeline_library_group_handles
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_pipeline_robustness
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_post_depth_coverage
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_primitive_topology_list_restart
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_primitives_generated_query
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_private_data
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_provoking_vertex
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_queue_family_foreign
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_robustness2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_sample_locations
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_sampler_filter_minmax
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_scalar_block_layout
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_separate_stencil_usage
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_shader_atomic_float
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_shader_demote_to_helper_invocation
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_shader_image_atomic_int64
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_shader_module_identifier
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_shader_object
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_shader_replicated_composites
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_shader_subgroup_ballot
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_shader_subgroup_vote
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_shader_viewport_index_layer
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_subgroup_size_control
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_swapchain_maintenance1
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_texel_buffer_alignment
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_tooling_info
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_transform_feedback
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_vertex_attribute_divisor
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_vertex_input_dynamic_state
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_ycbcr_2plane_444_formats
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_EXT_ycbcr_image_arrays
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_clip_space_w_scaling
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_cluster_acceleration_structure
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_compute_shader_derivatives
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_cooperative_matrix
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_cooperative_vector
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_copy_memory_indirect
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_corner_sampled_image
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_coverage_reduction_mode
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_cuda_kernel_launch
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_dedicated_allocation
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_dedicated_allocation_image_aliasing
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_descriptor_pool_overallocation
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_device_diagnostic_checkpoints
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_device_diagnostics_config
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_device_generated_commands
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_device_generated_commands_compute
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_external_memory
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_external_memory_win32
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_fill_rectangle
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_fragment_coverage_to_color
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_fragment_shader_barycentric
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_fragment_shading_rate_enums
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_framebuffer_mixed_samples
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_geometry_shader_passthrough
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_inherited_viewport_scissor
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_linear_color_attachment
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_low_latency
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_low_latency2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_memory_decompression
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_mesh_shader
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_partitioned_acceleration_structure
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_present_metering
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_raw_access_chains
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_ray_tracing
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_ray_tracing_invocation_reorder
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_representative_fragment_test
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_sample_mask_override_coverage
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_scissor_exclusive
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_shader_atomic_float16_vector
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_shader_image_footprint
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_shader_sm_builtins
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_shader_subgroup_partitioned
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_shading_rate_image
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_viewport_array2
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_viewport_swizzle
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NV_win32_keyed_mutex
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NVX_binary_import
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NVX_image_view_handle
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_NVX_multiview_per_view_attributes
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_AMD_buffer_marker
+fillDeviceExtensionNames()->vulkanDeviceExtensionName = VK_GOOGLE_user_type
+
+
+fillDeviceExtensionNames() : Device Extension Count = 231
+fillDeviceExtensionNames()->VK_KHR_SWAPCHAIN_EXTENSION_NAME  is found
+
+fillDeviceExtensionNames()->EnabledVulkanDeviceExtensionName = VK_KHR_swapchain
+createVulkanDevice()->fillDeviceExtensionNames Function is Succeded
+createVulkanDevice()->vkCreateDevice Function is Succeded
+
+Initialize()->createVulkanDevice Function is Succeded
+getDeviceQueue()->vkGetDeviceQueue Function Succeded vkQueue
+ ********************************************************************************************
+getPhysicalDeviceSurfaceFormatAndColorSpace()->vkGetPhysicalDeviceSurfaceFormatsKHR Function is Succeded
+getPhysicalDeviceSurfaceFormatAndColorSpace()->vkGetPhysicalDeviceSurfaceFormatsKHR second Function is Succeded
+vkSurfaceFormatKHR_array is Free
+
+createSwapchain()->getPhysicalDeviceSurfaceFormatAndColorSpace Function is Succeded
+createSwapchain()->vkGetPhysicalDeviceSurfaceCapabilitiesKHR() Function is Succeded
+minImageCount
+
+
+
+!!!2 8 2 !!!
+
+In IF createSwapchain()->SwapchainImage WidthxHeight = 784 x 561
+getPhysicalDevicePresentMode()->vkGetPhysicalDeviceSurfacePresentModesKHR first Function is Succeded
+getPhysicalDevicePresentMode()->vkGetPhysicalDeviceSurfacePresentModesKHR second Function is Succeded
+MAILBOX
+NOT A MAILBOX
+vkPresentModeKHR_array is Free
+
+createSwapchain()->getPhysicalDevicePresentMode Function is Succeded
+createSwapchain()->vkCreateSwapchainKHR Function is Succeded
+Initialize()->createSwapchain() Function is Succeded
+
+createImagesAndImageViews()->vkGetSwapchainImagesKHR gives swapchain (desired) image count = 2
+createImagesAndImageViews() : First call to vkGetSwapchainImagesKHR Second Call succeeded.
+
+createImagesAndImageViews()->vkCreateImageViews Function is Succeded
+createImagesAndImageViews()->vkCreateImageViews Function is Succeded
+Initialize()->createImagesAndImageViews() Function is SuccededcreateCommandPool()->vkCreateCommandPool Function is Succeded
+Initialize()->createCommandPool() Function is SuccededcreateCommandBuffers()->vkAllocateCommandBuffers Function is SuccededcreateCommandBuffers()->vkAllocateCommandBuffers Function is Succeded
+Initialize()->createCommandBuffers() Function is Succeded
+createVertexBuffer()->vkCreateBuffer() Staging Buffer Function is Succeded
+
+createVertexBuffer()->vkAllocateMemory Staging Buffer Function is Succeded
+
+createVertexBuffer()->vkBindBufferMemory Staging Buffer Function is Succeded
+
+createVertexBuffer()->vkMapMemory Staging Buffer Function is Succeded
+
+createVertexBuffer()->vkUnmapMemory Staging Buffer Function is Succeded
+
+createVertexBuffer()->vkCreateBuffer() Function is Succeded
+
+createVertexBuffer()->vkAllocateMemory Function is Succeded
+
+createVertexBuffer()->vkBindBufferMemory Function is Succeded
+
+createVertexBuffer()->vkAllocateCommandBuffers Staging Buffer Function is Succeded
+createVertexBuffer()->vkBeginCommandBuffer() Staging Buffer Function is Succeded
+
+createVertexBuffer()->vkEndCommandBuffer() Staging Buffer Function is Succeded
+
+vkQueueSubmit()->createVertexBuffer() Staging Buffer Function is Succeded
+
+vkQueueWaitIdle()->createVertexBuffer() Staging Buffer Function is Succeded
+
+Free commandbuffers freed From Staging Buffer 
+
+Free vertexData_stagingBuffer_position.vkBuffer freed
+
+Free vertexData_stagingBuffer_position.vkDeviceMemory freed
+
+Initialize()->createVertexBuffer() Function is Succeded
+
+createShaders()-> Succeded to Open Spirv Vertex Shader file
+
+
+createShaders()-> gave  Spirv Vertex Shader size more than 0 
+
+
+createShaders()->vkCreateShaderModule Function is Succeded
+createShaders()-> Vertex Shader Module is Succeded
+createShaders()-> Succeded to Open Spirv Fragment Shader file
+
+
+createShaders()-> gave  Spirv Fragment Shader size more than 0 
+
+
+createShaders()->vkCreateShaderModule Function for fragment is Succeded
+createShaders()-> Fragment Shader Module is Succeded
+Initialize()->createShaders() Function is Succeded
+
+createDescriptorSetLayout()->vkCreateDescriptorSetLayout() Function for fragment is Succeded
+Initialize()->createDescriptorSetLayout() Function is Succeded
+
+createPipelineLayout()->vkCreatePipelineLayout() Function for fragment is Succeded
+Initialize()->createPipelinelayout() Function is Succeded
+createRenderPass()->vkCreateRenderPass Function is Succeded
+Initialize()->createRenderPass() Function is Succeded
+vkVertexInputAttributeDescription_array
+
+vkPipelineVertexInputStateCreateInfo
+
+vkPipelineInputAssemblyStateCreateInfo
+
+vkPipelineRasterizationStateCreateInfo
+
+vkPipelineColorBlendAttachmentState_array
+
+vkPipelineColorBlendStateCreateInfo
+
+vkPipelineViewportStateCreateInfo
+
+vkPipelineViewportStateCreateInfo
+
+vvkPipelineMultisampleStateCreateInfo
+
+vkPipelineShaderStageCreateInfo_array
+
+vkPipelineCacheCreateInfo
+
+createPipeline()->vkCreatePipelineCache Function is Succeded
+
+createPipeline()->vkCreateGraphicsPipelines Function is Succeded
+
+Initialize()->createPipeline() Function is Succeded
+
+createFrameBuffers()->vkCreateFramebuffer Function is Succeded
+createFrameBuffers()->vkCreateFramebuffer Function is Succeded
+Initialize()->createFrameBuffer() Function is Succeded
+createSemaphores()->vkCreateSemaphore() first Function is Succeded
+
+createSemaphores()->vkCreateSemaphore() second Function is Succeded
+
+Initialize()->createSemaphores() Function is Succeded
+createFences()->vkCreateFence() Function is Succeded
+
+createFences()->vkCreateFence() Function is Succeded
+
+Initialize()->createFences() Function is Succeded
+buildComaandBuffers()->vkResetCommandBuffer() Function is Succeded
+
+buildComaandBuffers()->vkBeginCommandBuffer() Function is Succeded
+
+buildComaandBuffers()->vkEndCommandBuffer() Function is Succeded
+
+buildComaandBuffers()->vkResetCommandBuffer() Function is Succeded
+
+buildComaandBuffers()->vkBeginCommandBuffer() Function is Succeded
+
+buildComaandBuffers()->vkEndCommandBuffer() Function is Succeded
+
+Initialize()->buildComaandBuffers() Function is Succeded
+WinMain()->Initilize Function is Succeded
+ vkDeviceWaitIdle() is Done
+vkDestroyFence vkFence_array i = 0 Completedestroyed!
+vkDestroyFence vkFence_array i = 1 Completedestroyed!
+
+Free vkFence_array freed
+
+Free vkSemaphore_RenderComplete freed
+
+Free vkSemaphore_BackBuffer freed
+
+Free commandbuffers freed
+
+Free vertexData_Position.vkDeviceMemory freed
+
+Free vertexData_Position.vkBuffer freed
+
+Free vkDescriptorSetLayout freed
+
+Free vkPipelineLayout freed
+
+Free vkPipeline freed
+
+Free vkRenderPass freed
+
+Free vkShaderModule_fragment_shader freed
+
+Free vkShaderModule_vertex_shader freed
+
+Free commandbuffers freed
+
+Free commandbuffers freed
+
+ vkCommandPool is Freed
+
+Free swapchainImage_array images freed
+
+Free swapchainImage_array images freed
+
+ vkSwapchainKHR is Freed
+
+ vkDestroyDevice() is Done
+
+vkDestroySurfaceKHR Done
+
+vkDestroyDebugReportCallbackEXT_fnptr Done
+
+vkDestroyInstance Done
+
+Uninitialize->Program Terminated Successfully.
